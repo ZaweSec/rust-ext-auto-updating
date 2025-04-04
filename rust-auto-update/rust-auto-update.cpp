@@ -88,13 +88,16 @@ void CheatLoop() {
         uintptr_t parent_class = Il2cppGetHandle(CallDecryption("BaseNetworkable_DecryptList", Address::BaseNetworkable_DecryptList, parent_static_fields));
         uint64_t entity = driver->read<uint64_t>(parent_class + offsets::BaseNetworkable::entity);
 
-        auto EntityCount = driver->read<uint32_t>(entity + 0x10);
-        auto EntityList = driver->read<uint64_t>(entity + 0x18);
+        uintptr_t firstval = driver->read<uint64_t>(entity + 0x10);
+        uintptr_t secondval = driver->read<uint64_t>(entity + 0x18);
+
+        auto EntityCount = firstval < secondval ? firstval : secondval;
+        auto EntityList = firstval < secondval ? secondval : firstval;
 
 		uintptr_t LocalPlayer = driver->read<uintptr_t>( ( uint64_t )EntityList + 0x20 );
-		if ( !LocalPlayer ) return;
+		if ( !LocalPlayer ) continue;
 
-		uintptr_t playermodel = driver->read<uintptr_t>( LocalPlayer + 0x518 );                       // these offsets are not auto updating , it will be up to you 😉❤️
+		uintptr_t playermodel = driver->read<uintptr_t>( LocalPlayer + 0x280 );                       // these offsets are not auto updating , it will be up to you 😉❤️
 		sdk::structs::Vector3 playerpos = driver->read<sdk::structs::Vector3>( playermodel + 0x1D8 ); // these offsets are not auto updating , it will be up to you 😉❤️
 
 		system("cls");
