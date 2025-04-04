@@ -1,7 +1,3 @@
-Here’s a README similar in style to the one in the image:  
-
----
-
 # **Project Name - RUNTIME AUTO UPDATE OFFSETS/DECRYPTION**
 
 ## **Preface**  
