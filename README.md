@@ -1,4 +1,4 @@
-# **Project Name - RUNTIME AUTO UPDATE OFFSETS/DECRYPTION**
+# **RUST RUNTIME AUTO UPDATE OFFSETS/DECRYPTION**
 
 ## **Preface**  
 This project is a proof of concept for dynamically resolving offsets and decrypting data at runtime using **Zydis**, eliminating the need for manual updates.  
@@ -8,7 +8,7 @@ Currently, it supports only **BaseNetworkable** offsets/decryption and **MainCam
 ### **Note:**  
 This project was developed in a single night simply because I was tired of constantly updating decryptions. 😆  
 
-_Company X just lost a lot of money with these encryptions..._  
+_Facepunch just lost a lot of money with these encryptions..._  
 
 ## **How to use:**  
 
